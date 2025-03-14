@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>    
-    <meta charset="UTF-8">    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <title>OTOKO Token</title>    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTOKO Token</title>
     <style>
         body {
             margin: 0;
@@ -15,7 +15,7 @@
             position: relative;
         }
 
-        /* Background logo effect */
+        /* Background logo pattern */
         body::before {
             content: "";
             position: fixed;
@@ -23,11 +23,20 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('otokologo.png'); /* Replace with your actual logo path */
-            background-size: 200px; /* Adjust size */
-            background-repeat: repeat;
-            background-position: center;
+            background: url('otokologo.png') repeat;
+            background-size: 200px;
             opacity: 0.1; /* Faded effect */
+            z-index: -1;
+        }
+
+        /* Semi-transparent overlay to improve text readability */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
             z-index: -1;
         }
 
@@ -52,7 +61,7 @@
         p {
             font-size: 18px;
             margin: 10px 0;
-            opacity: 0.8;
+            opacity: 0.9;
             animation: fadeInUp 2s ease-in-out;
         }
 
@@ -62,17 +71,25 @@
             animation: fadeInUp 2s ease-in-out;
         }
 
+        /* Improved Button Styling */
         .button {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 24px;
             margin-top: 20px;
-            background-color: #007bff;
+            background: linear-gradient(45deg, #007bff, #00c3ff);
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
+        .button:hover {
+            background: linear-gradient(45deg, #0056b3, #0084d6);
+            transform: scale(1.05);
+        }
+
+        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -84,17 +101,18 @@
         }
     </style>
 </head>
-<body>    
-    <div class="container">        
-        <img src="otokologo.png" alt="OTOKO Logo">        
-        <h1>WELCOME TO OTOKO TOKEN</h1>        
-        <p>The future of decentralized finance, built on Ethereum.</p>        
+<body>
+    <div class="overlay"></div>
+
+    <div class="container">
+        <img src="otokologo.png" alt="OTOKO Logo">
+        <h1>WELCOME TO OTOKO TOKEN</h1>
+        <p>The future of decentralized finance, built on Ethereum.</p>
         
-        <!-- Buy OTOKO Button -->
         <a href="https://pancakeswap.finance/swap?outputCurrency=0x9b37B2Ac1a3eba853225a2515AdF7dA744dC2561" target="_blank" class="button">
             Buy OTOKO
-        </a>    
-    </div>    
+        </a>
+    </div>
 
     <div class="section">
         <h2>About OTOKO</h2>
